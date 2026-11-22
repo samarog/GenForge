@@ -26,15 +26,6 @@ class Hero:
         return self.hp > 0
 # hero end
 
-hero1 = Hero("Odin", 100, 50, 50)
+# run
 
-hero1.take_damage(30)
-print(hero1.hp)
-hero1.take_damage(30)
-print(hero1.hp)
-try:
-    hero1.take_damage(-30)
-except ValueError:
-    print("Invalid damage!")
-
-print(hero1.hp)
+# end run
