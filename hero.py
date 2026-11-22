@@ -20,6 +20,10 @@ class Hero:
         self.hp -= damage
         if self.hp <= 0:
             self.hp = 0
+
+    @property
+    def is_alive(self) -> bool:
+        return self.hp > 0
 # hero end
 
 hero1 = Hero("Odin", 100, 50, 50)
@@ -28,6 +32,9 @@ hero1.take_damage(30)
 print(hero1.hp)
 hero1.take_damage(30)
 print(hero1.hp)
-hero1.take_damage(-20)
+try:
+    hero1.take_damage(-30)
+except ValueError:
+    print("Invalid damage!")
 
 print(hero1.hp)
