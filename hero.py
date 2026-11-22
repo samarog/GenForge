@@ -28,4 +28,14 @@ class Hero:
 
 # run
 
+hero = Hero("Odin", 100, 50, 50)
+
+hero.take_damage(40)
+
+print(f"Still breathing! You have {hero.hp} HP" if hero.is_alive else f"You dead...")
+
+hero.take_damage(70)
+
+print(f"Still breathing! You have {hero.hp} HP" if hero.is_alive else f"You dead...")
+
 # end run
