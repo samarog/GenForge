@@ -33,12 +33,16 @@ class Hero:
 # run
 
 hero = Hero("Odin", 100, 50, 50)
-monster = Hero("Loki", 100, 30, 15)
+monster = Hero("Loki", 100, 55, 45)
+turn = 0
+while hero.is_alive and monster.is_alive:
+    hero.attack_target(monster)
+    monster.attack_target(hero)
+    turn += 1
 
-hero.take_damage(100)
-hero.attack_target(monster)
-print(f"Hero has {hero.hp} HP left.")
-print(f"Monster has {monster.hp} HP left.")
-
+if hero.is_alive:
+    print(f"{hero.name} wins in {turn} turns.")
+else:
+    print(f"{monster.name} wins in {turn} turns.")
 
 # end run
