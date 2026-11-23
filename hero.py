@@ -19,6 +19,9 @@ class Hero:
             self.hp = 0
 
     def attack_target(self, target: Hero) -> None:
+        if not self.is_alive or not target.is_alive:
+            return
+
         damage: int = max(1, self.attack - target.defense)
         target.take_damage(damage)
 
@@ -32,16 +35,10 @@ class Hero:
 hero = Hero("Odin", 100, 50, 50)
 monster = Hero("Loki", 100, 30, 15)
 
+hero.take_damage(100)
 hero.attack_target(monster)
 print(f"Hero has {hero.hp} HP left.")
 print(f"Monster has {monster.hp} HP left.")
 
-hero.attack_target(monster)
-print(f"Hero has {hero.hp} HP left.")
-print(f"Monster has {monster.hp} HP left.")
-
-hero.attack_target(monster)
-print(f"Hero has {hero.hp} HP left.")
-print(f"Monster has {monster.hp} HP left.")
 
 # end run
