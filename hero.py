@@ -33,6 +33,11 @@ class Hero:
 # run
 
 hero = Hero("Odin", 100, 50, 50)
-monster = Hero("Thor", 100, 30, 15)
+monster = Hero("Loki", 100, 30, 15)
+
+hero.attack_target(monster)
+
+print(hero.hp)
+print(monster.hp)
 
 # end run
