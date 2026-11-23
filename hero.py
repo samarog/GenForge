@@ -8,9 +8,6 @@ class Hero:
         self.attack = attack
         self.defense = defense
 
-    def testing(self):
-        return f"Hello, i'm {self.name} and i have {self.hp} HP left."
-
     def __str__(self):
         return f"the instance attributes of Hero are: {self.name} for name, {self.hp} for HP left, {self.attack} for attack and {self.defense} for defense."
 
@@ -36,8 +33,15 @@ hero = Hero("Odin", 100, 50, 50)
 monster = Hero("Loki", 100, 30, 15)
 
 hero.attack_target(monster)
+print(f"Hero has {hero.hp} HP left.")
+print(f"Monster has {monster.hp} HP left.")
 
-print(hero.hp)
-print(monster.hp)
+hero.attack_target(monster)
+print(f"Hero has {hero.hp} HP left.")
+print(f"Monster has {monster.hp} HP left.")
+
+hero.attack_target(monster)
+print(f"Hero has {hero.hp} HP left.")
+print(f"Monster has {monster.hp} HP left.")
 
 # end run
