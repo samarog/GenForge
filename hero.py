@@ -14,12 +14,16 @@ class Hero:
     def __str__(self):
         return f"the instance attributes of Hero are: {self.name} for name, {self.hp} for HP left, {self.attack} for attack and {self.defense} for defense."
 
-    def take_damage(self, damage: int):
+    def take_damage(self, damage: int) -> None:
         if damage < 0:
             raise ValueError("Damage cannot be negative.") # stop negative values from raising hp
         self.hp -= damage
         if self.hp <= 0:
             self.hp = 0
+
+    def attack_target(self, target: Hero) -> None:
+        damage: int = max(1, self.attack - target.defense)
+        target.take_damage(damage)
 
     @property
     def is_alive(self) -> bool:
@@ -29,13 +33,6 @@ class Hero:
 # run
 
 hero = Hero("Odin", 100, 50, 50)
-
-hero.take_damage(40)
-
-print(f"Still breathing! You have {hero.hp} HP" if hero.is_alive else f"You dead...")
-
-hero.take_damage(70)
-
-print(f"Still breathing! You have {hero.hp} HP" if hero.is_alive else f"You dead...")
+monster = Hero("Thor", 100, 30, 15)
 
 # end run
