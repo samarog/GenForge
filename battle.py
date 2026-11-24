@@ -9,6 +9,13 @@ class Battle:
         self.monster = monster
         self.turn = 0
 
+    def simulate_battle(self):
+        if not self.hero.is_alive or not self.monster.is_alive:
+            return
+        while self.hero.is_alive and self.monster.is_alive:
+            self.hero.attack_target(self.monster)
+            self.monster.attack_target(self.hero)
+            self.turn += 1
 # run
 
 odin = Hero("Odin", 100, 50, 30, 20)
