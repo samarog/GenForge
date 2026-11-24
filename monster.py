@@ -12,9 +12,11 @@ class Monster(Character):
 
 # run
 
-gojira = Monster("Gojira", 100, 50, 50, 50)
+monster = Monster("Gojira", 100, 50, 50, 50)
 
-gojira.take_damage(30)
+monster.take_damage(30)
 
-print(gojira.name)
-print(gojira.hp)
+print(monster.name)
+print(monster.hp)
+
+# end run

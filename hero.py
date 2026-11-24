@@ -13,16 +13,9 @@ class Hero(Character):
 # run
 
 hero = Hero("Odin", 100, 50, 50, 50)
-monster = Hero("Loki", 100, 55, 45, 60)
-turn = 0
-while hero.is_alive and monster.is_alive:
-    hero.attack_target(monster)
-    monster.attack_target(hero)
-    turn += 1
 
-if hero.is_alive:
-    print(f"{hero.name} wins in {turn} turns.")
-else:
-    print(f"{monster.name} wins in {turn} turns.")
+print(hero.get_role())
+print(hero.name)
+print(hero.hp)
 
 # end run
