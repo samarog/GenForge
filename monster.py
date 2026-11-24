@@ -11,12 +11,9 @@ class Monster(Character):
         return f"the instance attributes of Monster are: {self.name} for name, {self.hp} for HP left, {self.attack} for attack and {self.defense} for defense."
 
 # run
-
-monster = Monster("Gojira", 100, 50, 50, 50)
-
-monster.take_damage(30)
-
-print(monster.name)
-print(monster.hp)
-
+if __name__ == "__main__": # it only runs if directly called
+    monster = Monster("Gojira", 100, 50, 50, 50)
+    monster.take_damage(30)
+    print(monster.name)
+    print(monster.hp)
 # end run
